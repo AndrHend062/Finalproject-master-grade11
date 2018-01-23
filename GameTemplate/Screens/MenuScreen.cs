@@ -48,6 +48,8 @@ namespace GameTemplate.Screens
             Application.Exit();
         }
 
+      
+
         /// <summary>
         /// Change any control default values here
         /// </summary>
@@ -60,7 +62,7 @@ namespace GameTemplate.Screens
 
         //    gameTitle.Font = new Font("Courier New", 30);
         //    gameTitle.Location = new Point(ScreenControl.controlWidth - 990, 50);
-       // }
+        // }
 
 
     }

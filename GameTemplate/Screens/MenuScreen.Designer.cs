@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuScreen));
             this.exitButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.scoresButton = new System.Windows.Forms.Button();
@@ -100,7 +101,7 @@
             this.gameTitle.Name = "gameTitle";
             this.gameTitle.Size = new System.Drawing.Size(418, 101);
             this.gameTitle.TabIndex = 5;
-            this.gameTitle.Text = "-Make Love Not War- ";
+            this.gameTitle.Text = "-Make Love Not War-   Country Dating Simulator ";
             this.gameTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // instructionButton
@@ -122,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.BackgroundImage = global::GameTemplate.Properties.Resources.WachtAmRhein;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.instructionButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.optionsButton);

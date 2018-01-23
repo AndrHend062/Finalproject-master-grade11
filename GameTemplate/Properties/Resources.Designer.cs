@@ -91,12 +91,42 @@ namespace GameTemplate.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Die_Wacht_am_Rhein {
+            get {
+                object obj = ResourceManager.GetObject("Die_Wacht_am_Rhein", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Fredericus_Rex {
+            get {
+                object obj = ResourceManager.GetObject("Fredericus_Rex", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap hall {
             get {
                 object obj = ResourceManager.GetObject("hall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Markische_Heide {
+            get {
+                object obj = ResourceManager.GetObject("Markische_Heide", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
@@ -117,6 +147,26 @@ namespace GameTemplate.Properties {
             get {
                 object obj = ResourceManager.GetObject("WachtAmRhein", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Wenn_die_Soldaten {
+            get {
+                object obj = ResourceManager.GetObject("Wenn_die_Soldaten", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Yuki_no_Shingun {
+            get {
+                object obj = ResourceManager.GetObject("Yuki_no_Shingun", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

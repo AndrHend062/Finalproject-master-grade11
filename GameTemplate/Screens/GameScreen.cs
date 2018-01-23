@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameTemplate.Dialogs;
 using System.Threading;
+using System.IO;
 
 namespace GameTemplate.Screens
 {
     public partial class GameScreen : UserControl
     {
         int scene = 0;
-        int day = 2;
+        int day = 1;
+        int textSpeed = 20;
         List<string> dialog = new List<string>();
         List<string> dialog2 = new List<string>();
         List<string> dialog2a = new List<string>();
@@ -69,7 +71,92 @@ namespace GameTemplate.Screens
             dialog.Add("Russia: Oh...");
             dialog.Add("Russia: Hi!");
             dialog.Add("France: Salut!");
-            dialog.Add(charName + ": "); //35
+            dialog.Add(charName + ": I heard you guys playing music and decided to check it out so..."); //35
+            dialog.Add("France: We’re the Entente Music Club! You can stay here and watch us practice if you want.");
+            dialog.Add("United Kingdom: Of course, it would be rude to invite you " +
+                "in without offering you some tea first.");
+            dialog.Add("United Kingdom: What do you prefer? Darjeeling? Orange Pekoe?");
+            dialog.Add(charName + ": Ahhhh, I don’t really drink tea."); 
+            dialog.Add("United Kingdom: I’ll just pick for you then. Oolong tea, coming right up!"); //40
+            dialog.Add("(Man, these people sure are coming on quite strong.)");
+            dialog.Add("(At least that one in the furry hat doesn’t seem so bad.)");
+            dialog.Add("(Maybe I’ll sit next to her.)");
+            dialog.Add(charName + ": Hi there!"); 
+            dialog.Add("Russia: Uhh…"); //45
+            dialog.Add("Russia: I…");
+            dialog.Add("Russia: Uuuu…");
+            dialog.Add("(She buries her face in her hands)");
+            dialog.Add(charName + ": Well then."); 
+            dialog.Add("(The one in blue takes a seat next to me)"); //50
+            dialog.Add("France: Hiya! I don’t think I introduced myself yet. I’m France!");
+            dialog.Add(charName + ": You’re whatnow!?");
+            dialog.Add("France: France. La France…");
+            dialog.Add("France:  F-R-A-N-C-E."); 
+            dialog.Add(charName + ": You’re named after a country?"); //55
+            dialog.Add("France: No, silly! I am a country!");
+            dialog.Add(charName + ": Ummmm…");
+            dialog.Add("(This is seriously weird. It’s like something from one of my visual novels.)");
+            dialog.Add("United Kingdom: That tea you wanted is ready."); 
+            dialog.Add(charName + ": I didn’t want any tea!!!"); //60
+            dialog.Add("United Kingdom: I’m sorry. I was under the impression you wanted tea.");
+            dialog.Add("United Kingdom: I guess I should have introduced myself first.");
+            dialog.Add("United Kingdom: I am the United Kingdom under His Majesty King George V.");
+            dialog.Add(charName + ": Nope. That’s it. I’m out.");
+            dialog.Add(""); //BG change //65
+            dialog.Add("(I hurriedly leave the clubroom)");
+            dialog.Add("(As I walk off down the hall, the club members call out after me)");
+            dialog.Add("Russia: Um, Bye...");
+            dialog.Add("France: Awwwwww… please stay!");
+            dialog.Add("United Kingdom: You’re welcome back any time!"); //70
+            dialog.Add("(Further down the hall I hear yet more music coming from a different classroom.)");
+            dialog.Add("(Is there a second music club?)");
+            dialog.Add("(It really doesn’t sound all that great, but at least the people here might be normal.)");
+            dialog.Add("(I enter the clubroom.)");
+            dialog.Add(""); //75 //BGChange
+            dialog.Add(charName + ": Hello?");
+            dialog.Add("Ottoman Empire: Aha! A tributary comes to bow before my awesome might!");
+            dialog.Add(charName + ": Is this the drama club?");
+            dialog.Add("Austria-Hungary: Nope! This is the…");
+            dialog.Add("(...)"); //80
+            dialog.Add(charName + ": The…");
+            dialog.Add("Austria-Hungary: I forget!");
+            dialog.Add("Germany: We are the Central Powers Music Club!");
+            dialog.Add("Austria-Hungary: Oh, right. I always forget things…");
+            dialog.Add("Germany: That’s ok. We all make mistakes. As long as you try your best, right?"); //85
+            dialog.Add("Ottoman Empire: How are we ever going to beat those losers in " +
+                "the Entente Club with you two acting like this all the time?");
+            dialog.Add("(Wait a minute.)");
+            dialog.Add("(Entente…)");
+            dialog.Add("(Central Powers…)");
+            dialog.Add("(I don’t like where this is going.)"); //90
+            dialog.Add("Austria-Hungary: You really need to work on channeling your positive energy, Ottoman-Chan.");
+            dialog.Add("Ottoman Empire: D-don’t call me that!!!! ");
+            dialog.Add("Ottoman Empire: I am one of the oldest and most powerful empires in the world!");
+            dialog.Add(charName + ": Well, oldest at least.");
+            dialog.Add("Ottoman Empire: Rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr!"); //95
+            dialog.Add("Germany: Tee-hee.");
+            dialog.Add("Germany: We should probably introduce ourselves.");
+            dialog.Add("Germany: I’m The German Empire, the leader of this club!");
+            dialog.Add("Austria-Hungary: I’m Austria-Hungary. Germany’s cousin.");
+            dialog.Add("Ottoman Empire: And I’m the Ottoman Empire, as I’m sure you already know."); //100
+            dialog.Add("(Great. More crazy country people.)");
+            dialog.Add("(I guess I’m not as shocked this time around.)");
+            dialog.Add(charName + ": Um… Nice to meet you all. My name is ." + charName + ".");
+            dialog.Add(charName + ": I was looking for a place I could stay after school to write my History essay.");
+            dialog.Add("Germany: Well you could always stay here with us, as long as you don’t mind" +
+                " helping out from time to time."); //105
+            dialog.Add(charName + ": I guess I’d be fine with that. I’ll see you around. Bye for now!");
+            dialog.Add("Austria-Hungary: Bye-bye!");
+            dialog.Add("Germany: Tchüß!");
+            dialog.Add("Ottoman Empire: Whatever. Bye."); 
+            dialog.Add(""); //BG Change //110
+            dialog.Add("(Well that was an interesting day.)");
+            dialog.Add("(I guess I’m excited to spend some time with the Central Powers after school.)");
+            dialog.Add("(Then again, the Entente did say I was welcome back whenever.)");
+            dialog.Add("(And I feel kind of bad. I was really rude to them.)");
+            dialog.Add("(But I can only choose one of the two clubs to stay with after school.)"); //115
+            dialog.Add("(I’ll have to make up my mind tomorrow.)");
+            dialog.Add("");
             dialog.Add("");
             dialog.Add("");
             dialog.Add("");
@@ -105,7 +192,7 @@ namespace GameTemplate.Screens
             {
                 textLabel.Text += text.ElementAt(i);
                 textLabel.Refresh();
-                Thread.Sleep(10);
+                Thread.Sleep(textSpeed);
             }
         }
 
@@ -186,6 +273,26 @@ namespace GameTemplate.Screens
                                 if (scene == 28)
                                 {
                                     this.BackgroundImage = GameTemplate.Properties.Resources.Class;
+                                }
+                                if (scene == 53)
+                                {
+                                    textSpeed = 60;
+                                }
+                                if (scene == 54)
+                                {
+                                    textSpeed = 20;
+                                }
+                                if (scene == 65)
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.hall;
+                                }
+                                if (scene == 75)
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.class2;
+                                }
+                                if (scene == 110)
+                                {
+                                    this.BackgroundImage = null;
                                 }
                             }
                             nextEnabled = true;
