@@ -11,6 +11,7 @@ using GameTemplate.Dialogs;
 using System.Threading;
 using System.IO;
 
+
 namespace GameTemplate.Screens
 {
     public partial class GameScreen : UserControl
@@ -28,6 +29,7 @@ namespace GameTemplate.Screens
         List<string> dialog2CPGER = new List<string>();
         List<string> dialog2CPAUS = new List<string>();
         List<string> dialog2CPOTT = new List<string>();
+        List<string> dialog2CPEND = new List<string>();
         List<string> dialog3 = new List<string>();
         bool nextEnabled = true;
         bool decision2Enabled = false;
@@ -35,6 +37,10 @@ namespace GameTemplate.Screens
         string charName;
         string charChoice;
         string clubChoice;
+
+        System.Windows.Media.MediaPlayer enPlayer;
+
+
 
         public GameScreen()
         {
@@ -170,18 +176,29 @@ namespace GameTemplate.Screens
             dialog2.Add("[DecisionTest]");
             dialog2.Add("Didn't work");
             dialog2CP.Add("central powers");
-            dialog2CP.Add("bbbbbbbbbbbbbbbb");
-            dialog2CP.Add("bbbbbbbbbbbbbbbb");
-            dialog2CP.Add("bbbbbbbbbbbbbbbb");
+            dialog2CP.Add("1");
+            dialog2CP.Add("2");
+            dialog2CP.Add("3");
+            dialog2CP.Add("bick ger asu or otto ");
             dialog2EN.Add("britan-Hungary");
             dialog2CPGER.Add("German Empire");
+            dialog2CPGER.Add("German Empire cool");
+            dialog2CPGER.Add("3");
+            dialog2CPGER.Add("4");
+            dialog2CPGER.Add("5");
+            dialog2CPGER.Add("6");
+            dialog2CPGER.Add("7");
             dialog2CPAUS.Add("Austria - Hungary");
 
 
-
+            dialog2CPEND.Add("end list start ");
 
             //Day 3 List
             dialog3.Add("HI");
+
+            enPlayer = new System.Windows.Media.MediaPlayer();
+         //   enPlayer.Open(new Uri (Application.StartupPath + "/Resources/"))
+
         }
         
 
@@ -217,7 +234,7 @@ namespace GameTemplate.Screens
 
             if (decision2Enabled == true)
             {
-                switch (e.KeyCode)
+                switch (e.KeyCode) // club
                 {
                     case Keys.B:
                         clubChoice = "a";
@@ -235,7 +252,7 @@ namespace GameTemplate.Screens
 
             }
 
-            if (decision3Enabled == true)
+            if (decision3Enabled == true) //char 
             {
                 switch (e.KeyCode)
                 {
@@ -331,13 +348,25 @@ namespace GameTemplate.Screens
                             break;
                             
                         case 2: //Day 2
-                            if (clubChoice == "a") // centeral powers  
+                           if (clubChoice == "a") // centeral     
                             {
+                                scene++;
+
+
+                                if (charChoice != "a" && charChoice != "b" && charChoice != "c")
+                                {
+                                    type(dialog2CP[scene]);
+                                }
                                 if (charChoice == "a")
                                 {
+                                    try
+                                    {
 
-                                    type(dialog2CPGER[scene]);
-                                    scene++;
+                                        type(dialog2CPGER[scene]);
+                                        scene++;
+                                    }
+                                    catch
+                                    { }
                                 }
                                 else if (charChoice == "b")
                                 {
@@ -349,23 +378,15 @@ namespace GameTemplate.Screens
                                     type(dialog2CPOTT[scene]);
                                     scene++;
                                 }
-                                else
-                                {
-                                    try
-                                    {
-                                        type(dialog2[scene]);
-                                        scene++;
-                                    }
-                                    catch
-                                    {
-                                        day++;
-                                        scene = 0;
-                                    }
-                                } 
 
-                            }   
-                            else if (clubChoice == "b")  // entente
+                            }
+                          
+
+                              
+                            else if (clubChoice == "b")  // centeral
                             {
+                                scene++;
+
                                 if (charChoice == "a")
                                 {
 
@@ -397,7 +418,7 @@ namespace GameTemplate.Screens
                                     scene = 0;
                                 }
                             }
-                            if(scene == 1)
+                            if(scene == 1 && clubChoice != "a")
                             {
                                 textLabel.Text = "b - Central Powers \n n - Entente";
                                 decision2Enabled = true;
@@ -407,9 +428,15 @@ namespace GameTemplate.Screens
                                 textLabel.Text = "b - The Somme \n n - Verdun \n m - Brusilov Offensive";
                                 decision3Enabled = true;
                             }
+                            else if (scene == 2 && clubChoice == "a" && charChoice != "a" && charChoice != "c" && charChoice != "c")
+                            {
+                                textLabel.Text = "hfdahukghkd Brusilov Offensive";
+                                decision3Enabled = true;
+                            }
+
                             break;
 
-                        case 3:
+                        case 3: // day 3 
                             try
                             {
                                 type(dialog3[scene]);
