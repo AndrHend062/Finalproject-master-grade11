@@ -48,6 +48,7 @@ namespace GameTemplate.Screens
         {
             InitializeComponent();
             //Day 1 List
+            #region 
             dialog.Add("Alarm: Ring! Ring!");
             dialog.Add(charName + ": Ughhhh...");
             dialog.Add("Alarm: Ring! Ring!");
@@ -172,6 +173,7 @@ namespace GameTemplate.Screens
             dialog.Add("");
             dialog.Add("");
             dialog.Add(""); // 120
+            #endregion
             //You know that it's spelled "dialogue," right?
 
             //Day 2 List
@@ -222,7 +224,8 @@ namespace GameTemplate.Screens
             dialog2EN.Add(""); //9
    
             dialog2EN.Add("Britan-Hungary?");
-
+            //great britan day 2
+            #region
             dialog2ENGBR.Add("(After a while, the United Kingdom stands up and stops the practice.)");
             dialog2ENGBR.Add("United Kingdom: Alright! Great job everyone!");
             dialog2ENGBR.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
@@ -255,8 +258,6 @@ namespace GameTemplate.Screens
             dialog2ENGBR.Add("(Oh right. I kind of forgot about the other members for a second.)");
             dialog2ENGBR.Add("(The United Kingdom heads up to the front of the clubroom.)");
             dialog2ENGBR.Add("");
-
-
             dialog2ENGBR.Add("(After a while, the United Kingdom stands up and stops the practice.)");
             dialog2ENGBR.Add("United Kingdom: Alright! Great job everyone!");
             dialog2ENGBR.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
@@ -289,8 +290,9 @@ namespace GameTemplate.Screens
             dialog2ENGBR.Add("(France skips back up to the front of the class.)");
             dialog2ENGBR.Add("(What a strange girl.)");
             dialog2ENGBR.Add("");
-
-
+            #endregion
+            //rus day 2
+            #region
             dialog2ENRUS.Add("(After a while, the United Kingdom stands up and stops the practice.)");
             dialog2ENRUS.Add("United Kingdom: Alright! Great job everyone!");
             dialog2ENRUS.Add("United Kingdom: Russia, you may have to work on your embouchure a bit.");
@@ -319,9 +321,10 @@ namespace GameTemplate.Screens
             dialog2ENRUS.Add("MC: Hey! Wait, don’t-");
             dialog2ENRUS.Add("(She’s already walking back to the front of the class.)");
             dialog2ENRUS.Add("");
-        
+            #endregion
 
             //germany day 2
+            #region
             dialog2CPGER.Add("(After a while Germany stand up and stops the practice.)");
             dialog2CPGER.Add("Germany: Alright! Great job everyone!");   
             dialog2CPGER.Add("Germany: Ottoman Empire, you’re still a little quiet.");
@@ -359,8 +362,9 @@ namespace GameTemplate.Screens
             dialog2CPGER.Add("(Oh right. I kind of forgot about the other members for a second.)");
             dialog2CPGER.Add("(Germany heads up to the front of the clubroom.)");
             dialog2CPGER.Add("");
-
+            #endregion
             //austria day 2
+            #region
             dialog2CPAUS.Add("(After a while Germany stand up and stops the practice.)");
             dialog2CPAUS.Add("Germany: Alright! Great job everyone!");
             dialog2CPAUS.Add("Germany: Ottoman Empire, you’re still a little quiet...");
@@ -397,12 +401,13 @@ namespace GameTemplate.Screens
             dialog2CPAUS.Add("Austria-Hungary: Bye!");
             dialog2CPAUS.Add("(She waddles back to the front of the class.)");//35
             dialog2CPAUS.Add("");//
-       
+            #endregion
 
             dialog2CPAUS.Add("");
             dialog2CPAUS.Add("");
             dialog2CPAUS.Add("Austria - Hungary");
-            
+            //ottomans day 2 
+            #region 
             dialog2CPOTT.Add("(After a while Germany stand up and stops the practice.)");
             dialog2CPOTT.Add("Germany: Alright! Great job everyone!");
             dialog2CPOTT.Add("Germany: Austria-Hungary, you might need to practice a bit more. Make sure you’re hitting the right notes.");
@@ -429,7 +434,7 @@ namespace GameTemplate.Screens
             dialog2CPOTT.Add("Ottoman Empire: The other club members are probably finishing up practice now.");
             dialog2CPOTT.Add("Ottoman Empire: I should really get going.");
             dialog2CPOTT.Add("(She nervously returns to the front of the class.)");
-         
+            #endregion 
             dialog2CPEND.Add("Germany: Alright, listen up everyone! ");
             dialog2CPEND.Add("Germany: So tomorrow I thought we would be doing a bit of a group activity ");
             dialog2CPEND.Add("Austria-Hungary: Yay! I like teamwork!");
