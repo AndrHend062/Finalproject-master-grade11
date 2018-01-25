@@ -30,7 +30,11 @@
         {
             this.textLabel = new System.Windows.Forms.Label();
             this.charBox1 = new System.Windows.Forms.PictureBox();
+            this.charBox2 = new System.Windows.Forms.PictureBox();
+            this.charBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.charBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // textLabel
@@ -48,11 +52,31 @@
             // 
             this.charBox1.BackColor = System.Drawing.Color.Transparent;
             this.charBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.charBox1.Location = new System.Drawing.Point(36, 60);
+            this.charBox1.Location = new System.Drawing.Point(36, 87);
             this.charBox1.Name = "charBox1";
             this.charBox1.Size = new System.Drawing.Size(247, 565);
             this.charBox1.TabIndex = 1;
             this.charBox1.TabStop = false;
+            // 
+            // charBox2
+            // 
+            this.charBox2.BackColor = System.Drawing.Color.Transparent;
+            this.charBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.charBox2.Location = new System.Drawing.Point(323, 87);
+            this.charBox2.Name = "charBox2";
+            this.charBox2.Size = new System.Drawing.Size(247, 565);
+            this.charBox2.TabIndex = 2;
+            this.charBox2.TabStop = false;
+            // 
+            // charBox3
+            // 
+            this.charBox3.BackColor = System.Drawing.Color.Transparent;
+            this.charBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.charBox3.Location = new System.Drawing.Point(626, 87);
+            this.charBox3.Name = "charBox3";
+            this.charBox3.Size = new System.Drawing.Size(247, 565);
+            this.charBox3.TabIndex = 3;
+            this.charBox3.TabStop = false;
             // 
             // GameScreen
             // 
@@ -63,13 +87,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.textLabel);
             this.Controls.Add(this.charBox1);
+            this.Controls.Add(this.charBox2);
+            this.Controls.Add(this.charBox3);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameScreen";
-            this.Size = new System.Drawing.Size(838, 518);
+            this.Size = new System.Drawing.Size(1033, 652);
             this.Click += new System.EventHandler(this.GameScreen_Click);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameScreen_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.charBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.charBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -78,5 +106,7 @@
 
         private System.Windows.Forms.Label textLabel;
         private System.Windows.Forms.PictureBox charBox1;
+        private System.Windows.Forms.PictureBox charBox2;
+        private System.Windows.Forms.PictureBox charBox3;
     }
 }
