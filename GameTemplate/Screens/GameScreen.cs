@@ -30,6 +30,7 @@ namespace GameTemplate.Screens
         List<string> dialog2CPAUS = new List<string>();
         List<string> dialog2CPOTT = new List<string>();
         List<string> dialog2CPEND = new List<string>();
+         List<string> dialog2ENEND = new List<string>();
         List<string> dialog3 = new List<string>();
         bool nextEnabled = true;
         bool decision2Enabled = false;
@@ -39,9 +40,9 @@ namespace GameTemplate.Screens
         string clubChoice;
 
         System.Windows.Media.MediaPlayer enPlayer;
-
-
-
+        System.Windows.Media.MediaPlayer cpPlayer;
+        System.Windows.Media.MediaPlayer walkPlayer;
+        System.Windows.Media.MediaPlayer markPlayer;
         public GameScreen()
         {
             InitializeComponent();
@@ -169,43 +170,127 @@ namespace GameTemplate.Screens
             dialog.Add("");
             dialog.Add("");
             dialog.Add("");
-            dialog.Add("");
+            dialog.Add(""); // 120
             //You know that it's spelled "dialogue," right?
 
             //Day 2 List
-            dialog2.Add("[DecisionTest]");
-            dialog2.Add("Didn't work");
-            dialog2CP.Add("central powers");
-            dialog2CP.Add("1");
-            dialog2CP.Add("2");
-            dialog2CP.Add("3");
-            dialog2CP.Add("bick ger asu or otto ");
-            dialog2EN.Add("britan-Hungary");
-            dialog2CPGER.Add("German Empire");
-            dialog2CPGER.Add("German Empire cool");
-            dialog2CPGER.Add("3");
-            dialog2CPGER.Add("4");
-            dialog2CPGER.Add("5");
-            dialog2CPGER.Add("6");
-            dialog2CPGER.Add("7");
+            dialog2.Add(""); //BG change //1
+            dialog2.Add("Alarm: Ring! Ring!");
+            dialog2.Add("(Time for my second day, I guess)");
+            dialog2.Add("");//BG change
+            dialog2.Add("Hideki: Hey "+charName+"!"); //5
+            dialog2.Add("Hideki: Have you decided on a topic for your essay yet?"); 
+            dialog2.Add(charName+": Nothing yet. I’m planning to start writing it today after school.");
+            dialog2.Add("Hideki: Right on, man.");
+            dialog2.Add("Hideki: I’m writing mine about the Holy Roman Empire.");
+            dialog2.Add("(I bet that Austria-Hungary would really enjoy that topic)"); //10
+            dialog2.Add("(In fact, whatever topic I choose to write about will probably affect my "+
+                 "relations with those countries I met yesterday.)"); 
+            dialog2.Add("(I should pick my topic carefully, some of those countries were pretty cute.)");
+            dialog2.Add("(Wow that sounds weird out loud.)");
+            dialog2.Add("");// BG change
+            dialog2.Add("(It's the end of the day now.)"); //15
+            dialog2.Add("(Time to decide what club to spend my afterschools with.)"); 
+            dialog2.Add("(So what’ll it be - Entente or Central Powers?)");
+            dialog2.Add(""); //18
+
+            dialog2CP.Add("(I think I really hit it off with the central Powers club members yesterday.)");
+            dialog2CP.Add("(That’s where I’ll write my essay.)");
+            dialog2CP.Add(" "); //BG change 
+            dialog2CP.Add("(By the time I enter the clubroom the girls have already started practicing.)");
+            dialog2CP.Add("(I take my seat at the back of the class.)"); //5
+            dialog2CP.Add("(Man, this club really isn’t so good at playing.)");
+            dialog2CP.Add("(It’s actually really hard to concentrate on the essay.)");
+            dialog2CP.Add("(I can barely even hear the Ottoman Empire’s part.)");
+            dialog2CP.Add("(Austria-Hungary is playing more than loud enough, but hitting all the wrong notes.)");
+            dialog2CP.Add("(At least Germany’s playing is fine, I guess.)"); //10
+            dialog2CP.Add("(Man, this club really isn’t so good at playing.)");
+            dialog2CP.Add("(Anyways, I should really get writing this essay.)");
+            dialog2CP.Add("(But what to write it on?)");
+            dialog2CP.Add(" "); //14
+          
+
+            dialog2EN.Add("(I think it would be best to make amends with the Entente club.)");
+            dialog2EN.Add("(I was really rude to them yesterday.)");
+            dialog2EN.Add(""); // BG change 
+            dialog2EN.Add("(By the time I enter the clubroom the girls have already started practicing.)");
+            dialog2EN.Add("(As I hoped, the club’s music really helps me to relax.)"); //5
+            dialog2EN.Add("(Russia’s playing is maybe not quite as good as the others, but it isn’t"+
+                 "particularly bad either.)");
+            dialog2EN.Add("(Anyways, I should really get writing this essay.)");
+            dialog2EN.Add("(But what to write it on?)");
+            dialog2EN.Add(""); //9
+   
+            dialog2EN.Add("Britan-Hungary?");
+
+            dialog2CPGER.Add("(After a while Germany stand up and stops the practice.)");
+            dialog2CPGER.Add("Germany: Alright! Great job everyone!");   
+            dialog2CPGER.Add("Germany: Ottoman Empire, you’re still a little quiet.");
+            dialog2CPGER.Add("Germany: Austria-Hungary, you might need to practice a bit more. Make" +
+                "sure you’re hitting the right notes."); 
+            dialog2CPGER.Add("Germany: You two keep practicing on your own for a bit." + 
+                "I should probably check in on our guest."); //5
+            dialog2CPGER.Add("(Germany sits down beside me. The other girls resume practicing.)");
+            dialog2CPGER.Add("Germany: Yeah… We’re not exactly prepared for the competition, are we?");
+            dialog2CPGER.Add( charName+": Competition? What competition?"); 
+            dialog2CPGER.Add("Germany: I guess I haven’t told you about that.");
+            dialog2CPGER.Add("Germany: We’ve got this really big play-off coming up against the Entente club."); //10 
+            dialog2CPGER.Add("Germany: The stakes are pretty high so it’d really be a shame if we lost.");
+            dialog2CPGER.Add(charName +": Why even enter then?");
+            dialog2CPGER.Add("Germany: Well, Austria-Hungary and Russia kind of started this whole thing.");
+            dialog2CPGER.Add("Germany: Something about Serbia-Chan, I don’t really know. ");
+            dialog2CPGER.Add("Germany: I kind of put this club together to help her out."); //15 
+            dialog2CPGER.Add("Germany: I really thought that our friend Italy would join. She promised she would, you know.");
+            dialog2CPGER.Add("Germany: Instead we got the Ottoman Empire. She really is quite sweet, "+
+                "even if she doesn’t seem that way at first.");
+            dialog2CPGER.Add("Germany: I believe you would call her a “tsundere”. ");
+            dialog2CPGER.Add(charName +": You guys sound like you’re really in trouble."); //20 
+            dialog2CPGER.Add("Germany: You can say that again.");
+            dialog2CPGER.Add("Germany: Anyways, let’s see that essay you’re writing.");
+            dialog2CPGER.Add(charName +": Oh, sure thing.");
+            dialog2CPGER.Add("(I hand Germany my essay.)");
+            dialog2CPGER.Add("(She studies it intensely.)"); //25
+            dialog2CPGER.Add("Germany: Oh.");
+            dialog2CPGER.Add("Germany: Oh my…");
+            dialog2CPGER.Add("Germany: This is really good.");
+            dialog2CPGER.Add("Germany: I really appreciate the subject matter and the writing is very strong and direct.");
+            dialog2CPGER.Add(charName+": Oh, thanks."); //30
+            dialog2CPGER.Add("Germany: Don’t mention it.");
+            dialog2CPGER.Add("Germany: I should probably get back to the others.");
+            dialog2CPGER.Add("(Oh right. I kind of forgot about the other members for a second.)");
+            dialog2CPGER.Add("(Germany heads up to the front of the clubroom.)");
+            dialog2CPGER.Add("");
+
+
+
+
+            dialog2CPAUS.Add(""); 
             dialog2CPAUS.Add("Austria - Hungary");
 
 
             dialog2CPEND.Add("end list start ");
 
             //Day 3 List
-            dialog3.Add("HI");
+            dialog3.Add("HI day 3");
+
+            //music 
 
             enPlayer = new System.Windows.Media.MediaPlayer();
-         //   enPlayer.Open(new Uri (Application.StartupPath + "/Resources/"))
+            cpPlayer = new System.Windows.Media.MediaPlayer();
+            walkPlayer = new System.Windows.Media.MediaPlayer();
+            markPlayer = new System.Windows.Media.MediaPlayer();
+            enPlayer.Open(new Uri(Application.StartupPath + "/Resources/Yuki_no_Shingun.mp3"));
+            cpPlayer.Open(new Uri(Application.StartupPath + "/Resources/Fredericus_Rex.mp3"));
+            walkPlayer.Open(new Uri(Application.StartupPath + "/Resources/Wenn_die_Soldaten.mp3"));
+            markPlayer.Open(new Uri(Application.StartupPath + "/Resources/Markische_Heide.mp3"));
 
         }
-        
 
 
-        
-       
-        
+
+
+
+
 
         private void GameScreen_Click(object sender, EventArgs e)
         {
@@ -282,7 +367,10 @@ namespace GameTemplate.Screens
                     Application.Exit();
 
                     break;
+                case Keys.Tab:
+                    day++;
 
+                    break;
 
                 case Keys.Space:
                     //charName = nameBox.Text;
@@ -310,6 +398,7 @@ namespace GameTemplate.Screens
                                 if (scene == 7)
                                 {
                                     this.BackgroundImage = GameTemplate.Properties.Resources.street;
+                                   // walkplayer.play();
                                 }
                                 if (scene == 18)
                                 {
@@ -348,13 +437,18 @@ namespace GameTemplate.Screens
                             break;
                             
                         case 2: //Day 2
+
+                           
+
                            if (clubChoice == "a") // centeral     
                             {
-                                scene++;
+
 
 
                                 if (charChoice != "a" && charChoice != "b" && charChoice != "c")
                                 {
+                                    scene++;
+
                                     type(dialog2CP[scene]);
                                 }
                                 if (charChoice == "a")
@@ -383,15 +477,29 @@ namespace GameTemplate.Screens
                           
 
                               
-                            else if (clubChoice == "b")  // centeral
+                            else if (clubChoice == "b")  // entetetenen
                             {
-                                scene++;
 
+
+
+                                if (charChoice != "a" && charChoice != "b" && charChoice != "c")
+                                {
+                                    scene++;
+
+                                    type(dialog2EN[scene]);
+                                }
                                 if (charChoice == "a")
                                 {
+                                    try
+                                    {
 
-                                    type(dialog2ENGBR[scene]);
-                                    scene++;
+                                        type(dialog2ENGBR[scene]);
+                                        scene++;
+                                    }
+                                    catch
+                                    {  
+                                     
+                                    }
                                 }
                                 else if (charChoice == "b")
                                 {
@@ -403,8 +511,8 @@ namespace GameTemplate.Screens
                                     type(dialog2ENRUS[scene]);
                                     scene++;
                                 }
-                               
-                                }
+
+                            }
                             else
                             {
                                 try
@@ -418,19 +526,53 @@ namespace GameTemplate.Screens
                                     scene = 0;
                                 }
                             }
-                            if(scene == 1 && clubChoice != "a")
+
+                            //scene changes 
+                             if (scene == 1 && clubChoice != "a" && clubChoice != "b")
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.bedroom;
+                                }
+                             if (scene == 4 && clubChoice != "a" && clubChoice != "b")
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.street;
+                                }
+                              if (scene == 14 && clubChoice != "a" && clubChoice != "b")
+                                {
+                                    this.BackgroundImage = null;
+                                }
+
+                               // cp scene changes 
+                           if (scene == 3 && clubChoice == "a" )
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.class2;
+                                }
+                             
+
+                                // EN scene changes 
+                           if (scene == 3 && clubChoice == "b" )
+                                {
+                                    this.BackgroundImage = GameTemplate.Properties.Resources.Class;
+                                }
+
+
+
+
+
+
+                            if(scene == 17  && clubChoice != "a" && clubChoice != "b"&& charChoice != "a" && charChoice != "b" && charChoice != "c")
                             {
                                 textLabel.Text = "b - Central Powers \n n - Entente";
                                 decision2Enabled = true;
                             }
-                            if (scene == 2 && clubChoice == "b") 
+
+                            if (scene == 9 && clubChoice == "b" && charChoice != "a" && charChoice != "b" && charChoice != "c") 
                             {
                                 textLabel.Text = "b - The Somme \n n - Verdun \n m - Brusilov Offensive";
                                 decision3Enabled = true;
                             }
-                            else if (scene == 2 && clubChoice == "a" && charChoice != "a" && charChoice != "c" && charChoice != "c")
+                            if (scene == 13 && clubChoice == "a" && charChoice != "a" && charChoice != "b" && charChoice != "c")
                             {
-                                textLabel.Text = "hfdahukghkd Brusilov Offensive";
+                                textLabel.Text = "b - Tannenberg \n n - The Isonzo \n m - Gallipoli";
                                 decision3Enabled = true;
                             }
 

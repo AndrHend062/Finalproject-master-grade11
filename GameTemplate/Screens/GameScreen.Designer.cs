@@ -67,6 +67,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(838, 518);
+            this.Click += new System.EventHandler(this.GameScreen_Click);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameScreen_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.charBox1)).EndInit();
             this.ResumeLayout(false);
