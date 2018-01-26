@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Country Dating Simulator - Andrew and Garrett  
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -30,7 +31,7 @@ namespace GameTemplate.Screens
         List<string> dialog2CPAUS = new List<string>();
         List<string> dialog2CPOTT = new List<string>();
         List<string> dialog2CPEND = new List<string>();
-         List<string> dialog2ENEND = new List<string>();
+        List<string> dialog2ENEND = new List<string>();
         List<string> dialog3 = new List<string>();
         bool nextEnabled = true;
         bool decision2Enabled = false;
