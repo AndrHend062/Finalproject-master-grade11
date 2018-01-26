@@ -17,8 +17,8 @@ namespace GameTemplate.Screens
     public partial class GameScreen : UserControl
     {
         int scene = 0;
-        int day = 2;
-        int textSpeed = 0; //20 
+        int day = 1;
+        int textSpeed = 20; //20 
         List<string> dialog = new List<string>();
         List<string> dialog2 = new List<string>();
         List<string> dialog2EN = new List<string>();
@@ -35,7 +35,7 @@ namespace GameTemplate.Screens
         bool nextEnabled = true;
         bool decision2Enabled = false;
         bool decision3Enabled = false;
-        string charName;
+        string charName = "Paul" ;
         string charChoice;
         string clubChoice;
         bool end = false;
@@ -177,6 +177,7 @@ namespace GameTemplate.Screens
             //You know that it's spelled "dialogue," right?
 
             //Day 2 List
+            #region
             dialog2.Add(""); //BG change //1
             dialog2.Add("Alarm: Ring! Ring!");
             dialog2.Add("(Time for my second day, I guess)");
@@ -224,72 +225,77 @@ namespace GameTemplate.Screens
             dialog2EN.Add(""); //9
    
             dialog2EN.Add("Britan-Hungary?");
+            #endregion
             //great britan day 2
             #region
             dialog2ENGBR.Add("(After a while, the United Kingdom stands up and stops the practice.)");
             dialog2ENGBR.Add("United Kingdom: Alright! Great job everyone!");
             dialog2ENGBR.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
             dialog2ENGBR.Add("United Kingdom: Russia, you may have to work on your embouchure a bit.");
-            dialog2ENGBR.Add("United Kingdom: You two keep practicing on your own for a bit. I should probably check in on our guest.");
+            dialog2ENGBR.Add("United Kingdom: You two keep practicing on your own for a bit. I should probably check in on our guest."); //5
             dialog2ENGBR.Add("(The UK sits down beside me. The other girls resume practicing.)");
             dialog2ENGBR.Add("United Kingdom: We might need a bit more practice, but I’d say we’re more than prepared for the competition.");
             dialog2ENGBR.Add(charName+": Competition? What competition?");
             dialog2ENGBR.Add("United Kingdom: I guess I haven’t told you about that.");
-            dialog2ENGBR.Add("United Kingdom: We’ve got this really big play-off coming up against the Central Powers club.");
+            dialog2ENGBR.Add("United Kingdom: We’ve got this really big play-off coming up against the Central Powers club."); //10
             dialog2ENGBR.Add("United Kingdom: They’re not exactly ready for it though.");
             dialog2ENGBR.Add(charName+": Why would they even enter then?");
             dialog2ENGBR.Add("United Kingdom: Well, Austria-Hungary and Russia kind of started this whole thing.");
             dialog2ENGBR.Add("United Kingdom: Something about Serbia-Chan, I don’t really know. ");
-            dialog2ENGBR.Add("United Kingdom: I almost didn’t join this club, but my friend Belgium convinced me.");
+            dialog2ENGBR.Add("United Kingdom: I almost didn’t join this club, but my friend Belgium convinced me.");//15
             dialog2ENGBR.Add("United Kingdom: France and I don’t really get along, see?");
             dialog2ENGBR.Add("United Kingdom: Russia I’ve never had any problems with. She mostly just keeps to herself.");
             dialog2ENGBR.Add(charName +": Well I think you guys sound great.");
             dialog2ENGBR.Add("United Kingdom: Why thank you!");
-            dialog2ENGBR.Add("United Kingdom: Anyways, let’s see that essay you’re writing.");
+            dialog2ENGBR.Add("United Kingdom: Anyways, let’s see that essay you’re writing.");//20
             dialog2ENGBR.Add(charName+": Oh, sure thing.");
             dialog2ENGBR.Add("(I hand the United Kingdom my essay.)");
             dialog2ENGBR.Add("(She studies it intensely.)");
             dialog2ENGBR.Add("United Kingdom: Oh my my…");
-            dialog2ENGBR.Add("United Kingdom: This is quite good.");
+            dialog2ENGBR.Add("United Kingdom: This is quite good."); //25
             dialog2ENGBR.Add("United Kingdom: I really appreciate the subject matter. That truly was a glorious offensive.");
             dialog2ENGBR.Add(charName +": Oh, thanks.");
             dialog2ENGBR.Add("United Kingdom: You’re very welcome.");
             dialog2ENGBR.Add("United Kingdom: I should probably get back to the others.");
-            dialog2ENGBR.Add("(Oh right. I kind of forgot about the other members for a second.)");
+            dialog2ENGBR.Add("(Oh right. I kind of forgot about the other members for a second.)");//30
             dialog2ENGBR.Add("(The United Kingdom heads up to the front of the clubroom.)");
             dialog2ENGBR.Add("");
-            dialog2ENGBR.Add("(After a while, the United Kingdom stands up and stops the practice.)");
-            dialog2ENGBR.Add("United Kingdom: Alright! Great job everyone!");
-            dialog2ENGBR.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
-            dialog2ENGBR.Add("United Kingdom: Russia, you may have to work on your embouchure a bit.");
-            dialog2ENGBR.Add("United Kingdom: Actually, I think I’d like to work one-on-one with you for a bit. ");
-            dialog2ENGBR.Add("United Kingdom: France, you can go talk to our guest.");
-            dialog2ENGBR.Add("France: Yes!");
-            dialog2ENGBR.Add("(France skips over and sits beside me. The other girls resume practicing.)");
-            dialog2ENGBR.Add("France: Soooo… How are you?"); 
-            dialog2ENGBR.Add(charName +": I’m pretty good, how about you?");
-            dialog2ENGBR.Add("France: I feel just glorious!");
-            dialog2ENGBR.Add("France: We’re so going to beat those Central Powers losers in the music competition. ");
-            dialog2ENGBR.Add(charName +": Competition?");
-            dialog2ENGBR.Add("France: Yeah, that idiot Austria started something with Russia over Serbia.");
-            dialog2ENGBR.Add("France: It all led to this big upcoming play-off.");
-            dialog2ENGBR.Add("France: This is my chance to finally get back Alsace-Lorraine!");
-            dialog2ENGBR.Add("France: You don’t know how happy that makes me!");
-            dialog2ENGBR.Add("France: Anywho… Let me see that essay you’re writing!");
-            dialog2ENGBR.Add(charName +": Yeah, sure.");
-            dialog2ENGBR.Add("(France quickly glances at the essay.)");
-            dialog2ENGBR.Add("(I’m not really sure if she even read a word of it.)");
-            dialog2ENGBR.Add("France: Sacré bleu!");
-            dialog2ENGBR.Add("France: This is fantastique!");
-            dialog2ENGBR.Add(charName + ": Did you actually read it?");
-            dialog2ENGBR.Add("France: Of course.");
-            dialog2ENGBR.Add(charName + ": If you say so.");
-            dialog2ENGBR.Add("(Meanwhile, the other girls have finished their practicing.)");
-            dialog2ENGBR.Add("France: I guess I gotta go now.");
-            dialog2ENGBR.Add("France: Au revoir ma cherie!");
-            dialog2ENGBR.Add("(France skips back up to the front of the class.)");
-            dialog2ENGBR.Add("(What a strange girl.)");
-            dialog2ENGBR.Add("");
+            #endregion
+            //france day 2
+            #region
+            dialog2ENFRA.Add("(After a while, the United Kingdom stands up and stops the practice.)");
+            dialog2ENFRA.Add("United Kingdom: Alright! Great job everyone!");
+            dialog2ENFRA.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
+            dialog2ENFRA.Add("United Kingdom: Russia, you may have to work on your embouchure a bit.");
+            dialog2ENFRA.Add("United Kingdom: Actually, I think I’d like to work one-on-one with you for a bit. ");//5
+            dialog2ENFRA.Add("United Kingdom: France, you can go talk to our guest.");
+            dialog2ENFRA.Add("France: Yes!");
+            dialog2ENFRA.Add("(France skips over and sits beside me. The other girls resume practicing.)");
+            dialog2ENFRA.Add("France: Soooo… How are you?");
+            dialog2ENFRA.Add(charName +": I’m pretty good, how about you?"); //10
+            dialog2ENFRA.Add("France: I feel just glorious!");
+            dialog2ENFRA.Add("France: We’re so going to beat those Central Powers losers in the music competition. ");
+            dialog2ENFRA.Add(charName +": Competition?");
+            dialog2ENFRA.Add("France: Yeah, that idiot Austria started something with Russia over Serbia.");
+            dialog2ENFRA.Add("France: It all led to this big upcoming play-off.");//15
+            dialog2ENFRA.Add("France: This is my chance to finally get back Alsace-Lorraine!");
+            dialog2ENFRA.Add("France: You don’t know how happy that makes me!");
+            dialog2ENFRA.Add("France: Anywho… Let me see that essay you’re writing!");
+            dialog2ENFRA.Add(charName +": Yeah, sure.");
+            dialog2ENFRA.Add("(France quickly glances at the essay.)");
+            dialog2ENFRA.Add("(I’m not really sure if she even read a word of it.)");
+            dialog2ENFRA.Add("France: Sacré bleu!");
+            dialog2ENFRA.Add("France: This is fantastique!");
+            dialog2ENFRA.Add(charName + ": Did you actually read it?");
+            dialog2ENFRA.Add("France: Of course.");
+            dialog2ENFRA.Add(charName + ": If you say so.");
+            dialog2ENFRA.Add("(Meanwhile, the other girls have finished their practicing.)");
+            dialog2ENFRA.Add("France: I guess I gotta go now.");
+            dialog2ENFRA.Add("France: Au revoir ma cherie!");
+            dialog2ENFRA.Add("(France skips back up to the front of the class.)");
+            dialog2ENFRA.Add("(What a strange girl.)");
+            dialog2ENFRA.Add("");
+
             #endregion
             //rus day 2
             #region
@@ -297,28 +303,28 @@ namespace GameTemplate.Screens
             dialog2ENRUS.Add("United Kingdom: Alright! Great job everyone!");
             dialog2ENRUS.Add("United Kingdom: Russia, you may have to work on your embouchure a bit.");
             dialog2ENRUS.Add("United Kingdom: France, make sure you’re hitting all those high notes.");
-            dialog2ENRUS.Add("United Kingdom: Actually, I think I’d like to work one-on-one with you for a bit. ");
+            dialog2ENRUS.Add("United Kingdom: Actually, I think I’d like to work one-on-one with you for a bit. "); //5
             dialog2ENRUS.Add("United Kingdom: Russia, you can go talk to our guest.");
             dialog2ENRUS.Add("Russia: Oh…");
             dialog2ENRUS.Add("Russia: I…");
             dialog2ENRUS.Add("Russia: I guess I’m ok with that.");
-            dialog2ENRUS.Add("(Russia awkwardly shuffles over and sits beside me. The other girls resume practicing.)");
+            dialog2ENRUS.Add("(Russia awkwardly shuffles over and sits beside me. The other girls resume practicing.)"); //10
             dialog2ENRUS.Add("(We sit in silence for a while.)");
             dialog2ENRUS.Add(charName + ": So… what’s new with you?");
             dialog2ENRUS.Add("Russia: Well… ");
             dialog2ENRUS.Add("Russia: There’s that competition  coming up.");
-            dialog2ENRUS.Add(charName + ": Competition?");
+            dialog2ENRUS.Add(charName + ": Competition?");//15
             dialog2ENRUS.Add("Russia: Yeah. Me and Austria kind of started a bit of a feud.");
             dialog2ENRUS.Add("Russia: I think our club’s pretty set though.");
             dialog2ENRUS.Add("Russia: Those Central Powers members aren’t so good.");
             dialog2ENRUS.Add("Russia: They’re probably better than me though.");
-            dialog2ENRUS.Add(charName + ": Don’t say that.");
+            dialog2ENRUS.Add(charName + ": Don’t say that."); //20
             dialog2ENRUS.Add(charName + ": Your playing is fine.");
             dialog2ENRUS.Add(charName + ": You’re too hard on yourself.");
             dialog2ENRUS.Add("Russia: Yeah… Maybe...");
             dialog2ENRUS.Add("Russia: I think I’m going to go now.");
             dialog2ENRUS.Add("Russia: The others look like they’re done practicing.");
-            dialog2ENRUS.Add("MC: Hey! Wait, don’t-");
+            dialog2ENRUS.Add("MC: Hey! Wait, don’t-");//25
             dialog2ENRUS.Add("(She’s already walking back to the front of the class.)");
             dialog2ENRUS.Add("");
             #endregion
@@ -362,6 +368,7 @@ namespace GameTemplate.Screens
             dialog2CPGER.Add("(Oh right. I kind of forgot about the other members for a second.)");
             dialog2CPGER.Add("(Germany heads up to the front of the clubroom.)");
             dialog2CPGER.Add("");
+            dialog2CPGER.Add("");
             #endregion
             //austria day 2
             #region
@@ -403,55 +410,83 @@ namespace GameTemplate.Screens
             dialog2CPAUS.Add("");//
             #endregion
 
-            dialog2CPAUS.Add("");
-            dialog2CPAUS.Add("");
-            dialog2CPAUS.Add("Austria - Hungary");
+     
             //ottomans day 2 
             #region 
             dialog2CPOTT.Add("(After a while Germany stand up and stops the practice.)");
             dialog2CPOTT.Add("Germany: Alright! Great job everyone!");
             dialog2CPOTT.Add("Germany: Austria-Hungary, you might need to practice a bit more. Make sure you’re hitting the right notes.");
             dialog2CPOTT.Add("Germany: I think I’d like to work with you one on one for a bit.");
-            dialog2CPOTT.Add("Ottoman Empire: Alright. I guess I’ll go talk to that loser guest of ours.");
+            dialog2CPOTT.Add("Ottoman Empire: Alright. I guess I’ll go talk to that loser guest of ours.");//5
             dialog2CPOTT.Add("(Wow. Thanks.)");
             dialog2CPOTT.Add("(The Ottoman Empire struts over and takes a seat next to me.)");
             dialog2CPOTT.Add("(The other club members resume their practicing.)");
             dialog2CPOTT.Add("Ottoman Empire: Man, those two really aren’t good at this, huh?");
-            dialog2CPOTT.Add("(She’s one to talk.)");
+            dialog2CPOTT.Add("(She’s one to talk.)");//10
             dialog2CPOTT.Add("Ottoman Empire: I don’t know how I’m going to win the competition with only these losers to back me up.");
             dialog2CPOTT.Add("(Competition? What competition?)");
             dialog2CPOTT.Add("Ottoman Empire: You probably don’t even know what I’m talking about.");
             dialog2CPOTT.Add("Ottoman Empire: Austria and Russia kind of started this dumb feud.");
-            dialog2CPOTT.Add("Ottoman Empire: So now engaged in a music competition with the Entente club.");
+            dialog2CPOTT.Add("Ottoman Empire: So now engaged in a music competition with the Entente club.");//15
             dialog2CPOTT.Add("Ottoman Empire: It kind of sucks, to be honest.");
             dialog2CPOTT.Add("Ottoman Empire: Anyways, let me see that essay of yours.");
             dialog2CPOTT.Add(charName +": Yeah, sure.");
             dialog2CPOTT.Add("(I hand the Ottoman Empire my essay.)");
-            dialog2CPOTT.Add("(Her eyes light up as she reads it.)");
+            dialog2CPOTT.Add("(Her eyes light up as she reads it.)"); //20
             dialog2CPOTT.Add("(Wait… is she blushing?)");
             dialog2CPOTT.Add("Ottoman Empire: I…");
             dialog2CPOTT.Add("Ottoman Empire: This is…");
             dialog2CPOTT.Add("Ottoman Empire: The other club members are probably finishing up practice now.");
-            dialog2CPOTT.Add("Ottoman Empire: I should really get going.");
+            dialog2CPOTT.Add("Ottoman Empire: I should really get going.");//25
             dialog2CPOTT.Add("(She nervously returns to the front of the class.)");
-            #endregion 
+            #endregion
+            //end cp 
+            #region
             dialog2CPEND.Add("Germany: Alright, listen up everyone! ");
             dialog2CPEND.Add("Germany: So tomorrow I thought we would be doing a bit of a group activity ");
             dialog2CPEND.Add("Austria-Hungary: Yay! I like teamwork!");
             dialog2CPEND.Add("Ottoman Empire: Ugh, I guess that’s fine.");
-            dialog2CPEND.Add("Germany: We can choose our partners tomorrow. Since there’s only three of us, I guess one will partner up with "+charName + ".");
+            dialog2CPEND.Add("Germany: We can choose our partners tomorrow. Since there’s only three of us, I guess one will partner up with "+charName + "."); //5
             dialog2CPEND.Add("Germany: It’s getting late, so I guess that means practice is over for today.");
             dialog2CPEND.Add("Germany: Good job today everyone!");
             dialog2CPEND.Add("");
             dialog2CPEND.Add("And with that, we all leave the clubroom and head back home.)    ");
-            dialog2CPEND.Add("(I’m sure the group activity will be lots of fun.)");
+            dialog2CPEND.Add("(I’m sure the group activity will be lots of fun.)"); //10
             dialog2CPEND.Add("(Though it will be tough to choose a partner.)");
             dialog2CPEND.Add("(That’s a decision I’ll have to make tomorrow though.)");
 
-            dialog2CPEND.Add("end list start ");
+            #endregion
+            //end EN
+            #region
+            dialog2ENEND.Add("United Kingdom: Alright, listen up everyone!");
+            dialog2ENEND.Add("United Kingdom: I thought we would do a bit of a group activity tomorrow.");
+            dialog2ENEND.Add("France: That sounds like fun.");
+            dialog2ENEND.Add("Russia: Oh...");
+            dialog2ENEND.Add("United Kingdom: We can choose our partners tomorrow. Since there’s only three of us, I guess one will partner up with " + charName + "."); //5
+            dialog2ENEND.Add("United Kingdom: It’s getting late, so I suppose that means practice is over for today.");
+            dialog2ENEND.Add("United Kingdom: Good job today everyone!");
+            dialog2ENEND.Add("");
+            dialog2ENEND.Add("And with that, we all leave the clubroom and head back home.)    ");
+            dialog2ENEND.Add("(I’m sure the group activity will be lots of fun.)"); //10
+            dialog2ENEND.Add("(Though it will be tough to choose a partner.)");
+            dialog2ENEND.Add("(That’s a decision I’ll have to make tomorrow though.)");
+
+            #endregion 
+
+
 
             //Day 3 List
-            dialog3.Add("HI day 3");
+            dialog3.Add("Alarm: Ring! Ring!");
+            dialog3.Add(charName + ": Well unfortunately this is it.");
+            dialog3.Add(charName + ": The game ends here.");
+            dialog3.Add(charName + ": Sorry we couldn’t get more done. We ran into quite a few problems.");
+            dialog3.Add(charName + ": Thanks for playing!");
+            dialog3.Add(charName + ": Make sure you check out the credits.");
+            dialog3.Add(charName + ": The program is going to end now.");
+            dialog3.Add(charName + ": Ok bye.");
+
+           
+           
 
             //music 
 
@@ -501,12 +536,14 @@ namespace GameTemplate.Screens
                     case Keys.B:
                         clubChoice = "a";
                         scene = 0;
-                        decision2Enabled = false; ;
+                        decision2Enabled = false; 
+                        textLabel.Text = "[Press space to continue]";
                         break;
                     case Keys.N:
                         clubChoice = "b";
                         scene = 0;
                         decision2Enabled = false;
+                        textLabel.Text = "[Press space to continue]";
                         break;
                   
                 }
@@ -520,17 +557,20 @@ namespace GameTemplate.Screens
                     case Keys.B:
                         charChoice = "a";
                         scene = 0;
-                        decision3Enabled = false; ;
+                        decision3Enabled = false; 
+                        textLabel.Text = "[Press space to continue]";
                         break;
                     case Keys.N:
                         charChoice = "b";
                         scene = 0;
                         decision3Enabled = false;
+                        textLabel.Text = "[Press space to continue]";
                         break;
                     case Keys.M:
                         charChoice = "c";
                         scene = 0;
-                        decision3Enabled = false; ;
+                        decision3Enabled = false; 
+                        textLabel.Text = "[Press space to continue]";
                         break;
                 }
 
@@ -540,7 +580,7 @@ namespace GameTemplate.Screens
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    Application.Exit();
+                    ScreenControl.changeScreen(this, "MenuScreen");
 
                     break;
                 case Keys.Tab:
@@ -695,9 +735,9 @@ namespace GameTemplate.Screens
                             
                         case 2: //Day 2
 
-                           
 
-                           if (clubChoice == "a") // centeral     
+
+                            if (clubChoice == "a") // centeral     
                             {
 
 
@@ -718,80 +758,64 @@ namespace GameTemplate.Screens
                                     }
                                     catch
                                     {
-                                        try
-                                        {
-
-                                            type(dialog2CPOTT[scene]);
-                                            scene++;
-                                        }
-                                        catch
-                                        {
-                                            end = true;
-
-                                            type(dialog2CPEND[scene]);
-
-                                        }
-                                    }
-                                }
-                                else if (charChoice == "b" && end != true)
-                                {
-                                    try
-                                    {
-
-
-                                        type(dialog2CPAUS[scene]);
-                                        scene++;
-                                    }
-                                    catch
-                                    {
-                                        try
-                                        {
-
-
-                                            type(dialog2CPOTT[scene]);
-                                            scene++;
-                                        }
-                                        catch
-                                        {
-                                            end = true;
-
-                                            type(dialog2CPEND[scene]);
-
-                                        }
-                                    }
-                                }
-                                else if (charChoice == "c" && end != true)
-                                {
-                                    try
-                                    {
-
-
-                                        type(dialog2CPOTT[scene]);
-                                        scene++;
-                                    }
-                                    catch
-                                    {
                                         end = true;
-
-                                        type(dialog2CPEND[scene]);
-
-                                    }
-                                }
-                                else if ( end == true)
-                                {
-                                    try
-                                    {
-                                        scene++;
-                                        type(dialog2CPEND[scene]);
-                                    }
-                                    catch
-                                    {
                                         scene = 0;
-                                        end = false;
-                                        day++;
-                                        charChoice = "f";
+                                        type(dialog2CPEND[scene]);
+
                                     }
+                                
+                            }
+                            else if (charChoice == "b" && end != true)
+                            {
+                                try
+                                {
+
+
+                                    type(dialog2CPAUS[scene]);
+                                    scene++;
                                 }
+                                catch
+                                {
+                                    end = true;
+                                    scene = 0;
+                                    type(dialog2CPEND[scene]);
+
+                                }
+
+                            }
+
+                            else if (charChoice == "c" && end != true)
+                            {
+                                try
+                                {
+
+
+                                    type(dialog2CPOTT[scene]);
+                                    scene++;
+                                }
+                                catch
+                                {
+                                    end = true;
+                                        scene = 0;
+                                        type(dialog2CPEND[scene]);
+
+                                }
+                            }
+                            else if (end == true)
+                            {
+                                try
+                                {
+                                    scene++;
+                                    type(dialog2CPEND[scene]);
+                                }
+                                catch
+                                {
+                                    scene = 0;
+                                    end = false;
+                                    day++;
+                                    charChoice = "f";
+                                }
+                            }
                             }
 
                             else if (clubChoice == "b")  // entetetenen
@@ -813,19 +837,10 @@ namespace GameTemplate.Screens
                                     }
                                     catch
                                     {
-                                        try
-                                        {
+                                        end = true;
+                                        scene = 0;
+                                        type(dialog2ENEND[scene]);
 
-                                            type(dialog2ENGBR[scene]);
-                                            scene++;
-                                        }
-                                        catch
-                                        {
-                                            end = true;
-
-                                            type(dialog2ENEND[scene]);
-
-                                        }
                                     }
                                 }
                                 else if (charChoice == "b" && end != true)
@@ -839,20 +854,10 @@ namespace GameTemplate.Screens
                                     }
                                     catch
                                     {
-                                        try
-                                        {
+                                        end = true;
+                                        scene = 0;
+                                        type(dialog2ENEND[scene]);
 
-
-                                            type(dialog2ENRUS[scene]);
-                                            scene++;
-                                        }
-                                        catch
-                                        {
-                                            end = true;
-
-                                            type(dialog2ENEND[scene]);
-
-                                        }
                                     }
                                 }
                                 else if (charChoice == "c" && end != true)
@@ -867,17 +872,17 @@ namespace GameTemplate.Screens
                                     catch
                                     {
                                         end = true;
-
+                                        scene = 0;
                                         type(dialog2ENEND[scene]);
 
                                     }
                                 }
-                                else if (end == true)
+                                else if (end == true )
                                 {
                                     try
                                     {
                                         scene++;
-                                        type(dialog2CPEND[scene]);
+                                        type(dialog2ENEND[scene]);
                                     }
                                     catch
                                     {
@@ -887,6 +892,11 @@ namespace GameTemplate.Screens
                                         charChoice = "f";
                                     }
                                 }
+                            }
+                            else if  (clubChoice != "a" && clubChoice != "b" && end != true)
+                            {
+                                scene++;
+                                type(dialog2[scene]);
                             }
 
                             //scene changes 
@@ -909,31 +919,72 @@ namespace GameTemplate.Screens
                                 {
                                     this.BackgroundImage = GameTemplate.Properties.Resources.class2;
                                 }
-                             
+                            if (scene == 8 && clubChoice == "a" && end == true)
+                            {
+                                this.BackgroundImage = null;
+                            }
 
-                                // EN scene changes 
-                           if (scene == 3 && clubChoice == "b" && end != true)
+
+                            // EN scene changes 
+                            if (scene == 3 && clubChoice == "b" && end != true)
                                 {
                                     this.BackgroundImage = GameTemplate.Properties.Resources.Class;
                                 }
+                            if (scene == 8 && clubChoice == "b" && end == true)
+                            {
+                                this.BackgroundImage = null;
+                            }
+
+                            
+                            //char changes 
+                            //char EN
+                            if (scene == 4 && clubChoice == "b" && clubChoice != "a" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true)
+                            {
+                                charBox1.BackgroundImage = GameTemplate.Properties.Resources.GBR;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.RUS;
+                                charBox3.BackgroundImage = GameTemplate.Properties.Resources.FRA;
+                            }
+                           
+                            //UK 
+                            if (scene == 6 && clubChoice == "b" && clubChoice != "a" && charChoice == "a" && charChoice != "b" && charChoice != "c" && end != true)
+                            {
+                                charBox1.BackgroundImage = null;
+                                charBox3.BackgroundImage = null;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.GBR;
+                            }
+                            //RUS
+                            if (scene == 10 && clubChoice == "b" && clubChoice != "a" && charChoice != "a" && charChoice == "b" && charChoice != "c" && end != true)
+                            {
+                                charBox1.BackgroundImage = null;
+                                charBox3.BackgroundImage = null;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.RUS;
+                            }
+                            //FRA
+                            if (scene == 8 && clubChoice == "b" && clubChoice != "a" && charChoice != "a" && charChoice != "b" && charChoice == "c" && end != true)
+                            {
+                                charBox1.BackgroundImage = null;
+                                charBox3.BackgroundImage = null;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.FRA;
+                            }
+                            //en end
+                            if (scene == 1 && clubChoice == "b" && end == true)
+                            {
+                                charBox1.BackgroundImage = GameTemplate.Properties.Resources.GBR;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.RUS;
+                                charBox3.BackgroundImage = GameTemplate.Properties.Resources.FRA;
+                            }
+                          
 
 
-
-                           //char changes 
 
                             //char cp 
                             if (scene == 4 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true)
                             {
                                 charBox1.BackgroundImage = GameTemplate.Properties.Resources.GER;
-                            }
-                            if (scene == 4 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true)
-                            {
                                 charBox2.BackgroundImage = GameTemplate.Properties.Resources.AUS;
-                            }
-                            if (scene == 4 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true)
-                            {
                                 charBox3.BackgroundImage = GameTemplate.Properties.Resources.OTT;
                             }
+                          
                             //ger 
                             if (scene == 6 && clubChoice == "a" && clubChoice != "b" && charChoice == "a" && charChoice != "b" && charChoice != "c" && end != true)
                             {
@@ -942,22 +993,35 @@ namespace GameTemplate.Screens
                                 charBox2.BackgroundImage = GameTemplate.Properties.Resources.GER;
                             }
                             //aus
-                            if (scene == 4 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice == "b" && charChoice != "c" && end != true)
+                            if (scene == 6 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice == "b" && charChoice != "c" && end != true)
                             {
                                 charBox1.BackgroundImage = null;
                                 charBox3.BackgroundImage = null;
                                 charBox2.BackgroundImage = GameTemplate.Properties.Resources.AUS;
                             }
                             //ott
-                            if (scene == 4 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice != "b" && charChoice == "c" && end != true)
+                            if (scene == 7 && clubChoice == "a" && clubChoice != "b" && charChoice != "a" && charChoice != "b" && charChoice == "c" && end != true)
                             {
                                 charBox1.BackgroundImage = null;
                                 charBox3.BackgroundImage = null;
                                 charBox2.BackgroundImage = GameTemplate.Properties.Resources.OTT;
                             }
+                            if (scene == 1 && clubChoice == "a" && end == true)
+                            {
+                                charBox1.BackgroundImage = GameTemplate.Properties.Resources.GER;
+                                charBox2.BackgroundImage = GameTemplate.Properties.Resources.AUS;
+                                charBox3.BackgroundImage = GameTemplate.Properties.Resources.OTT;
+                            }
+                           
 
 
 
+                            if (scene == 7 &&  end == true)
+                            {
+                                charBox1.BackgroundImage = null;
+                                charBox3.BackgroundImage = null;
+                                charBox2.BackgroundImage = null;
+                            }
 
 
 
@@ -971,7 +1035,7 @@ namespace GameTemplate.Screens
 
                             if (scene == 9 && clubChoice == "b" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true) // activate desision 
                             {
-                                textLabel.Text = "b - The Somme \n n - Verdun \n m - Brusilov Offensive";
+                                textLabel.Text = "b - The Somme \n n - Brusilov Offensive \n m - Verdun";
                                 decision3Enabled = true;
                             }
                             if (scene == 9 && clubChoice == "b" && charChoice != "a" && charChoice != "b" && charChoice != "c" && end != true)// stop progression 
@@ -992,11 +1056,12 @@ namespace GameTemplate.Screens
                             {
                                 type(dialog3[scene]);
                                 scene++;
+                                this.BackgroundImage = GameTemplate.Properties.Resources.bedroom;
+
                             }
                             catch
                             {
-                                day++;
-                                scene = 0;
+                                Application.Exit();
                             }
                             break;
                     }

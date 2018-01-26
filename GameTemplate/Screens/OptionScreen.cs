@@ -37,7 +37,8 @@ namespace GameTemplate.Screens
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //var1 + 1;
+            var1= var1 + 1;
+            button1.Text = var1 + " ";
 
         }
     }

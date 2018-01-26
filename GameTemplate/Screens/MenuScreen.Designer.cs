@@ -75,7 +75,7 @@
             this.scoresButton.Size = new System.Drawing.Size(120, 39);
             this.scoresButton.TabIndex = 8;
             this.scoresButton.Tag = "ScoreScreen";
-            this.scoresButton.Text = "High Scores";
+            this.scoresButton.Text = "Credits";
             this.scoresButton.UseVisualStyleBackColor = false;
             this.scoresButton.Click += new System.EventHandler(this.scoresButton_Click);
             // 

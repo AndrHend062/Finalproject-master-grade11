@@ -15,11 +15,24 @@ namespace GameTemplate.Screens
         public InstructionScreen()
         {
             InitializeComponent();
+            label1.Text = "Space - Next \nEscape -Back to menu\n B, N, M - Decisions(when prompted)";
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             ScreenControl.changeScreen(this, "MenuScreen");
+        }
+
+       
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.LightGray;
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.AliceBlue;
         }
     }
 }

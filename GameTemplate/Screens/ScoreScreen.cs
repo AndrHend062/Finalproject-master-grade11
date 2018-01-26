@@ -20,6 +20,7 @@ namespace GameTemplate.Screens
             defaultOverride();
             
             showScores();
+            titleLabel.Text += "\n \n \n Design - Garrett \n Writing - Garrett \n Code - Andy and Garrett \n Characters - Erich and Garrett \n Special Thanks - Nich";
         }
 
         public void showScores()
